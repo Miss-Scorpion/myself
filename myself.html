@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>我的简历</title>
+	<style>
+	/*初始化*/
+	* {
+		margin: 0;
+		padding: 0;
+	} 
+	ul {
+		list-style: none;
+	}
+	.clearfix:before, .clearfix:after {
+		content:"";
+		display: table;
+	}
+	.clearfix:after {
+		clear: both;
+	}
+	.clearfix {
+		*zoom: 1;
+	}
+	body {
+		/*background-color: #e1a7e8;*/
+	}
+	input {
+		boder:0;
+		box-sizing: content-box;
+	}
+	.container {  /* 版心宽度都是1200 都要居中对齐 所以声明一个公共类 */
+				width: 1200px;
+				margin: 0 auto;
+			}
+
+	/*初始化结束*/
+	/*头部样式*/
+	header {
+		height: 100px;
+		background-color: #0a1c30;
+		overflow: hidden;/*避免父亲和儿子一起因为外边距移动*/
+
+	}
+	nav {
+		width: 1000px;
+		height: 42px;
+		/*background-color: purple;*/
+		margin:26px auto;
+	}
+	.name {
+		float: left;
+		color: #08d0d8;
+	}
+	.navbar {
+		float: left;
+		height: 42px;
+		line-height: 42px;/*行高等于高可以居中，行高给父亲会继承给li*/
+		margin-left: 50px;
+	}
+	li {
+		float: left;
+	}
+	a {
+		color: #08d0d8;
+		text-decoration: none;
+	}
+
+	.navbar li a {
+		padding: 0 8px;/*上下为0 左右是8*/
+		display: block;
+		height: 42px;
+	}
+	.navbar li a:hover {
+		/*border-bottom: 2px solid purple;*/
+		background-color: rgba(8,208,216,0.2);
+
+	}
+	.search {
+		width: 250px;
+		height: 38px;
+		border: 1px solid #a205a2; 
+		float: right;
+	}
+	.search input[type=text] {
+		height: 38px;
+		width: 185px;
+		padding-left: 5px;
+		background-color: #d1dada;
+		float: left;
+		
+	}
+	.search input[type=submit] {
+		height: 38px;
+		width: 52px;
+		background-color: #a205a2;
+		float: right;
+		background: url(img/sousuo.png);
+
+	}
+	/*banner样式*/
+	.banner {
+		height: 300px;
+		background-color: #ccecf9;
+	}
+	.banner-in {
+		height: 300px;
+		width: 1000px;
+		background: red url(img/banner.jpeg) center no-repeat;
+	}
+	.sliderbar {
+		height: 170px;
+		width: 160px;
+		background-color: rgba(0,0,0,0.4);
+		color: #08d0d8;
+		border-radius: 50%;
+		padding-top: 130px;
+	}
+	.sliderbar:hover {
+		background-color: rgba(8,208,216,0.2);
+		color: #ccffda;
+	}
+	.tel {
+		height: 200px;
+		background-color: #0a1c30;
+		color: #08d0d8;
+		text-align: center;
+		padding-top: 50px;
+	}
+	.myself {
+		height: 2000px;
+		background-color: #ccecf9;
+	}
+	.edu {
+		width: 800px;
+		height: 400px;
+		background-color: #4fadb5;
+		color: #0d223a;
+		margin: 0 auto;
+		box-shadow: 5px 5px 3px 4px rgba(0,0,0,0.5);
+	}
+	.myself h3 {
+		text-indent: 2em;
+		font-size: 30px;
+	}
+	.myself p {
+		text-indent: 4em;
+		font-size: 20px;
+		margin-top: 30px;
+		width: 400px;
+		float: left;
+	}
+	.img-bj {
+		float: right;
+		width: 300px;
+	}
+	.fenge {
+		height: 100px;
+		
+	}
+	.experience {
+		width: 800px;
+		height: 400px;
+		background-color: #e2e2e4;
+		color: #0d223a;
+		margin: 0 auto;
+		box-shadow: 5px 5px 10px 6px rgba(0,0,0,0.7);
+	}
+	.img-jl {
+		float: right;
+		width: 300px;
+	}
+	.skill {
+		width: 800px;
+		height: 400px;
+		background-color: #6db583;
+		color: #0d223a;
+		margin: 0 auto;
+		box-shadow: 5px 5px 10px 6px rgba(0,0,0,0.7);
+	}
+	.img-jn {
+		float: right;
+		width: 300px;
+	}
+	.introduce {
+		width: 800px;
+		height: 400px;
+		background-color: #d4c3bb;
+		color: #0d223a;
+		margin: 0 auto;
+		box-shadow: 5px 5px 10px 6px rgba(0,0,0,0.7);
+	}
+	.img-js {
+		float: right;
+		width: 300px;
+	}
+	</style>
+</head>
+<body>
+	<header>
+		<nav>
+		<div class="name">
+			<h1>吴娴</h1>
+			<ul>
+				<li>22岁/</li>
+				<li>前端实习生</li>
+			</ul>
+		</div>
+		<div class="navbar">
+			<ul>
+				<li><a href="#bj">教育背景</a></li>
+				<li><a href="#jl">在校经历</a></li>
+				<li><a href="#jn">掌握技能</a></li>
+				<li><a href="#js">自我介绍</a></li>
+			</ul>
+		</div>
+		<!-- 搜索框 -->
+		<div class="search">
+		<form action="">
+			 <input type="text" placeholder=" 请输入关键词">
+			 <input type="submit" value="">
+		 </form>
+		</div>
+		</nav>
+	</header>
+	<!-- banner部分 -->
+	<div class="banner">
+		<div class="banner-in container">
+		<div class="sliderbar">
+			<p>纸上得来终觉浅，绝知此事要躬行。</p>
+		</div>
+		</div>
+	</div>
+	<div class="tel">
+		<h1>tel:13183987725</h1>
+		<h1>email:1432110627@qq.com</h1>
+		<h3>adress:四川省德阳广汉市</h3>
+	</div>
+	<div class="myself">
+		<div class="edu">
+			<h3 id="bj">教育背景</h3>
+	        	<p>2016.09-2020.06	攀枝花学院   本科<br>
+	        	软件工程主修课程：Web程序设计、软件测试、C程序设计、面向对象程序设计(JAVA)、数据库原理、操作系统与实验、算法、C++程序设计、C#程序设计、软件工程、数据结构、大学英语、离散数学、高数、物理。
+	       		</p>
+	       		<div class="img-bj"><img src="img/bj.jpg" alt=""></div>
+		</div>
+		<div class="fenge"></div>
+		<div class="experience">
+			<h3 id="jl">在校经历</h3>
+	        	<p>获得了了计算机二级证书、英语四级证书以及扬琴五级证书，扬琴八级证书。学习了html、css、js、JQ、C语言、C#、Java等计算机语言，其中html和css学得比较好，其他语言仅限于能读懂代码=。=</p>
+	       		<div class="img-jl"><img src="img/jl.jpg" alt=""></div>
+		</div>
+		<div class="fenge"></div>
+		<div class="skill">
+			<h3 id="jn">掌握技能</h3>
+	        	<p>学过UI设计，会使用Ps,掌握sublime，Hbuilder，Dreamwe的使用，会用fireworks测量网页；会写html结构，css样式，会用div+css布局网页。（右边的图是学UI是学UI时做的小图标、产品修图、网页导航条以及自己设计的两个商标）</p>
+	       		<div class="img-jn"><img src="img/jn.jpg" width="500" height="300" alt=""></div>
+		</div>
+		<div class="fenge"></div>
+		<div class="introduce">
+			<h3 id="js">自我介绍</h3>
+	        	<p>有较好的心理素质和抗压能力，对待工作认真负责，细心踏实、虚心求教、性格开朗，与他人有较好沟通能力，平时业余喜欢唱歌、扬琴和绘画。</p>
+	       		<div class="img-js"><img src="img/js.jpg" width="500" height="300" alt=""></div>
+		</div>
+		<div class="fenge"></div>
+	
+	
+	
+	</div>
+
+	
+	
+</body>
+</html>
